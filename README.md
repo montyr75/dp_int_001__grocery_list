@@ -1,4 +1,4 @@
-dp_int_001__grocery_list
+Grocery List
 ======
 
 [Reddit Daily Programmer exercise 001 (intermediate)](http://www.reddit.com/r/dailyprogrammer/comments/pihtx/intermediate_challenge_1/) -- using grocery items instead of events.
