@@ -8,3 +8,4 @@ pubspec.lock
 .idea
 out
 deploy
+build
