@@ -10,7 +10,7 @@ import "dart:convert";
 const String DATA_FILE_PATH = "grocery_list.json";
 
 List<String> groceryList;
-File dataFile = new File(DATA_FILE_PATH);
+File dataFile = File(DATA_FILE_PATH);
 
 void main() {
   print("\n************");
@@ -18,7 +18,7 @@ void main() {
   print("\n************");
 
   // if data file exists, read it in and restore the list -- otherwise, start with an empty list
-  groceryList = dataFile.existsSync() ? JSON.decode(dataFile.readAsStringSync()) : [];
+  groceryList = dataFile.existsSync() ? (jsonDecode(dataFile.readAsStringSync()) as List).cast<String>() : [];
 
   printList();
   printMenu();
@@ -110,5 +110,5 @@ void quit() {
   print("\nGoodbye! Your data will be saved in $DATA_FILE_PATH.");
 
   // create or overwrite data file with current list
-  dataFile.writeAsStringSync(JSON.encode(groceryList));
+  dataFile.writeAsStringSync(jsonEncode(groceryList));
 }
